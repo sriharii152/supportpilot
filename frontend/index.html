@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SupportPilot - AI Customer Support</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Application -->
+    <div class="app">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h1>SupportPilot</h1>
+                    <p>Memory-Powered Customer Support Agent</p>
+                </div>
+            </div>
+
+            <div class="memory-control">
+
+                <span>Memory</span>
+
+                <label class="switch">
+                    <input
+                        type="checkbox"
+                        id="memoryToggle"
+                        checked
+                    >
+                    <span class="slider"></span>
+                </label>
+
+                <span id="memoryStatus">ON</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="main-container">
+
+            <!-- Left Customer Panel -->
+            <aside class="customer-panel">
+
+                <div class="panel-header">
+                    <h2>Customer</h2>
+                </div>
+
+                <div class="customer-profile">
+
+                    <div class="avatar">
+                        RS
+                    </div>
+
+                    <div>
+                        <h3 id="customerName">
+                            Rahul Sharma
+                        </h3>
+
+                        <p>
+                            Backend Engineer
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="customer-details">
+
+                    <div class="detail-item">
+                        <span class="label">
+                            Company
+                        </span>
+
+                        <span class="value">
+                            AcmeCloud
+                        </span>
+                    </div>
+
+
+                    <div class="detail-item">
+                        <span class="label">
+                            Customer ID
+                        </span>
+
+                        <span class="value">
+                            rahul001
+                        </span>
+                    </div>
+
+
+                    <div class="detail-item">
+                        <span class="label">
+                            Environment
+                        </span>
+
+                        <div class="tags">
+
+                            <span class="tag">
+                                Node.js
+                            </span>
+
+                            <span class="tag">
+                                PostgreSQL
+                            </span>
+
+                            <span class="tag">
+                                API v2
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Memory Panel -->
+                <div class="memory-panel">
+
+                    <div class="memory-title">
+                        <span>🧠</span>
+                        <h3>Customer Memory</h3>
+                    </div>
+
+                    <div id="memoryList">
+
+                        <p class="empty-memory">
+                            Loading customer memory...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <!-- Chat Area -->
+            <section class="chat-panel">
+
+                <div class="chat-header">
+
+                    <div>
+                        <h2>Support Conversation</h2>
+
+                        <p>
+                            AI support with persistent customer memory
+                        </p>
+                    </div>
+
+                    <div class="status">
+
+                        <span class="status-dot"></span>
+
+                        Online
+
+                    </div>
+
+                </div>
+
+
+                <!-- Chat Messages -->
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+                    <!-- Initial AI Message -->
+                    <div class="message assistant">
+
+                        <div class="message-avatar">
+                            AI
+                        </div>
+
+                        <div class="message-content">
+
+                            <div class="message-name">
+                                SupportPilot
+                            </div>
+
+                            <div class="message-bubble">
+
+                                Hi Rahul! I'm SupportPilot.
+
+                                <br><br>
+
+                                I can use your previous support
+                                history to provide more contextual
+                                assistance.
+
+                                <br><br>
+
+                                Try asking:
+
+                                <strong>
+                                    "My API is timing out again."
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Input Area -->
+                <div class="chat-input-area">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Describe your issue..."
+                        rows="1"
+                    ></textarea>
+
+                    <button
+                        id="sendButton"
+                        onclick="sendMessage()"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+                <div class="input-hint">
+                    Press Enter to send • Shift + Enter for a new line
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Explanation -->
+        <section class="explanation">
+
+            <div class="explanation-card">
+
+                <h2>
+                    How SupportPilot Works
+                </h2>
+
+                <div class="flow">
+
+                    <div class="flow-step">
+                        <span>1</span>
+                        <p>
+                            Customer sends a message
+                        </p>
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                    <div class="flow-step">
+                        <span>2</span>
+                        <p>
+                            Hindsight recalls relevant memory
+                        </p>
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                    <div class="flow-step">
+                        <span>3</span>
+                        <p>
+                            Groq LLM generates response
+                        </p>
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                    <div class="flow-step">
+                        <span>4</span>
+                        <p>
+                            Useful information is remembered
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

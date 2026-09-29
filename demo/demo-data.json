@@ -1,0 +1,23 @@
+{
+    "customer": {
+        "id": "rahul",
+        "name": "Rahul Sharma",
+        "company": "AcmeCloud",
+        "role": "Backend Engineer"
+    },
+
+    "environment": {
+        "language": "Node.js",
+        "api_version": "API v2",
+        "database": "PostgreSQL"
+    },
+
+    "previous_incident": {
+        "problem": "API timeout",
+        "root_cause": "Database connection pool was too small",
+        "previous_pool_size": 10,
+        "fixed_pool_size": 30
+    },
+
+    "preference": "Customer prefers not to repeat information already provided."
+}
